@@ -1,0 +1,5 @@
+__pycache__/
+data/
+install.sh
+run.sh
+env/
