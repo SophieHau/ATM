@@ -3,3 +3,4 @@ data/
 install.sh
 run.sh
 env/
+test.py

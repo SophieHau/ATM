@@ -44,7 +44,15 @@ class Account():
         self.connection.commit()
         self.connection.close()
 
+    def add_account(self, account_number, pin, balance):
+        query = "INSERT INTO accounts (account_number, pin, balance) VALUES (?, ?, ?)"
+        self.cursor.execute(query, (account_number, pin, balance))
+        self.connection.commit()
 
-
+    def get_all_accounts(self):
+        query = "SELECT account_number FROM accounts"
+        self.cursor.execute(query)
+        accounts = self.cursor.fetchall()
+        return accounts
 
 
