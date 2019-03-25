@@ -3,6 +3,8 @@ from random import *
 from account import Account
 
 
+
+
 class Generator():
     def __init__(self):
         self.account_number = 0
