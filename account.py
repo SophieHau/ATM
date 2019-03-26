@@ -13,6 +13,8 @@ class Account(db.Model):
     account_number = db.Column(db.Integer, unique=True, nullable=False)
     pin = db.Column(db.Integer, unique=False, nullable=False)
     balance = db.Column(db.Integer)
+    name = db.Column(db.Text)
+    credit_card = db.Column(db.Integer)
 
 
     # def __init__(self):

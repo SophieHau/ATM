@@ -1,5 +1,6 @@
 from account import Account, db, app
 import random
+from faker import Faker
 # Create a script to generate 1,000 accounts
 # Each account has a 6 digits account number
 # 3 digits PIN
@@ -28,8 +29,20 @@ def generate_accounts(max_n):
 
 	db.session.commit()	
 
-generate_accounts(1000)
+def add_fake_names():
+	fake = Faker()
+	accounts = Account.query.all()
+	for account in accounts:
+		account.name = fake.name()
+	db.session.commit()
 
+
+def add_fake_credit_card():
+	fake = Faker()
+	accounts = Account.query.all()
+	for account in accounts:
+		account.credit_card = fake.credit_card_number()
+	db.session.commit()
 # count = 0
 # while count < 1000:
 # 	account_number = randint(100000, 999999)
