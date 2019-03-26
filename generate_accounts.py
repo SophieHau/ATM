@@ -43,6 +43,8 @@ def add_fake_credit_card():
 	for account in accounts:
 		account.credit_card = fake.credit_card_number()
 	db.session.commit()
+
+
 # count = 0
 # while count < 1000:
 # 	account_number = randint(100000, 999999)
