@@ -1,4 +1,4 @@
-from account import Account, db, app
+from models import Account, db, app
 import random
 from faker import Faker
 # Create a script to generate 1,000 accounts
@@ -34,14 +34,6 @@ def add_fake_names():
 	accounts = Account.query.all()
 	for account in accounts:
 		account.name = fake.name()
-	db.session.commit()
-
-
-def add_fake_credit_card():
-	fake = Faker()
-	accounts = Account.query.all()
-	for account in accounts:
-		account.credit_card = fake.credit_card_number()
 	db.session.commit()
 
 

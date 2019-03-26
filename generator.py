@@ -1,6 +1,6 @@
 import sqlite3
 from random import *
-from account import Account
+from models import Account
 
 
 
